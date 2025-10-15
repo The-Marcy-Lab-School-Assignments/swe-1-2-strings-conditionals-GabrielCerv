@@ -36,15 +36,15 @@ const happyBirthdayPet = (breed, age) => {
   return "Happy birthday!"
 };
 
-const funTypes = () => {
+const funTypes = (jsType) => {
   if (jsType === null) {
-    return 'Nothing, and I did set that'
+    return 'Nothing, and I did set that.'
   } else if (Number.isNaN(jsType)) {
     return "Well, now you're just showing off."
   } else if (typeof (jsType) === 'boolean') {
     return "To bool, or not to bool?"
   } else if (typeof (jsType) === 'undefined') {
-    return "Nothing, and I did set that."
+    return "Nothing, but I didn't set that."
   } else if (typeof (jsType) === 'string') {
     return "That's just some text."
   } else if (Array.isArray(jsType)) {
@@ -76,7 +76,15 @@ const formatName = (first, last) => {
 const extractDomain = (email) => {
   return email.split("@")[1];
 };
-
+/* const extractDomain = (email) => {
+  let domain = '';
+  const at = email.indexOf('@');
+  domain = email.slice((at) +1, email.length);
+  return domain;
+  }
+or
+const extractDomain = (email) => email.slice((email.indexOf('@') + 1))
+*/
 const startsWithVowel = (str) => {
   const vowel = ["a", "e", "i", "o", "u"]
   let lowercase = str[0].toLowerCase();
